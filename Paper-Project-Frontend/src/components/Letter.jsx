@@ -16,4 +16,4 @@ function Letter() {
   );
 }
 
-export default LetterCenter;
+export default Letter;
