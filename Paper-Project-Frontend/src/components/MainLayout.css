@@ -1,0 +1,28 @@
+.page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 0.4fr 2.2fr;
+  grid-template-rows: 0.5fr 2.3fr 0.2fr;
+  grid-auto-flow: row;
+  gap: 0;
+
+  grid-template-areas:
+    "user-info   extra-space"
+    "menu        letter-center"
+    "menu        footer";
+}
+
+.menu{
+  border: 1px solid green;
+}
+
+.letter-center {
+  border: 1px solid purple;
+}
+
