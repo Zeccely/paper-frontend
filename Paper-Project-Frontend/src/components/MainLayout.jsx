@@ -1,27 +1,27 @@
 import React from "react";
 import "./MainLayout.css";
+import MenuBar from "./MenuBar"
 
 
-function MainLayout({ children }) {
+const MainLayout = ({ children }) => {
   return (
-<div className="container">
-  <div className="user-info">user stuff here</div>
-  <div className="extra-space">extra space here</div>
+    <div className="container">
+      <div className="user-info">user stuff here</div>
+      <div className="extra-space">extra space here</div>
 
-  <nav className="menu">
-    <Menu />
-  </nav>
+      <nav className="menu">
+        <MenuBar />
+      </nav>
 
-  <main className="letter-center">
-    {children}
-  </main>
+      <main className="letter-center">
+        {children}
+      </main>
 
-  <div className="footer">
-    <Footer /> 
-  </div>
-</div>
+      <div className="footer">
+        <footer />
+      </div>
+    </div>
   );
 }
-
 
 export default MainLayout;
