@@ -1,6 +1,6 @@
-import 
 
-function LetterCenter() {
+
+function Letter() {
   return (
     <div className="letter-center-inner">
       <div className="letter-image">
