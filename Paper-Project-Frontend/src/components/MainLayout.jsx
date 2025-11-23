@@ -1,12 +1,14 @@
 import React from "react";
 import "./MainLayout.css";
 import MenuBar from "./MenuBar"
+import UserInfo from "./UserInfo";
 
 
 const MainLayout = ({ children }) => {
   return (
     <div className="container">
-      <div className="user-info">user stuff here</div>
+      <div className="user-info"><UserInfo></UserInfo></div>
+
       <div className="extra-space">extra space here</div>
 
       <nav className="menu">
