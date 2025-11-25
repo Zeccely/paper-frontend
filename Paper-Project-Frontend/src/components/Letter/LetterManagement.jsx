@@ -1,30 +1,63 @@
+import { useForm } from "react-hook-form";
+import { sendFile } from "../../api/FileGrabber";
 import "C:\\Users\\jepis\\Desktop\\School stuff\\I Hate Paper Project\\paper-project-frontend\\Paper-Project-Frontend\\src\\Styles\\LetterManagement.css"
 
+async function onSubmit(e) {
+    e.preventDefault();
+
+    if (!SelectedFile) {
+        console.log("Please select a file.");
+        return;
+    }
+
+    try {
+        const response = await sendFile(Title, Description, SelectedFile);
+        console.log("Uploaded OK:", response);
+    } catch (error) {
+        console.error("Upload failed:", error);
+    }
+}
+
 const LetterManagement = () => {
+    const { register, handleSubmit } = useForm();
+
+    async function onSubmit(data) {
+        const file = data.document[0];
+
+        const formData = new FormData();
+        formData.append("title", data.title);
+        formData.append("description", data.description);
+        formData.append("deadline", data.deadline);
+        formData.append("description", data.description)
+        formData.append("file", file);
+
+        await sendFile(formData);
+    }
+
     return (
         <div className="upload-wrapper">
-            <form className="card shadow shadow-large shadow-hover">
+            <form className="card shadow shadow-large shadow-hover" onSubmit={handleSubmit(onSubmit)}>
                 <div className="card-header">Add A Document</div>
                 <div className="card-body" >
 
                     <div className="form-group">
                         <label>Title</label>
-                        <input className="input-block" type="text" />
+                        <input className="input-block" type="text" {...register("title")} />
                     </div>
 
                     <div className="form-group">
                         <label>Category</label>
-                        <input className="input-block" type="text" />
+                        <input className="input-block" type="text" {...register("category")} />
                     </div>
 
                     <div className="form-group">
                         <label>Deadline</label>
-                        <input className="input-block" type="date" />
+                        <input className="input-block" type="date" {...register("deadline")} />
                     </div>
 
                     <div className="form-group">
                         <label>Description</label>
-                        <textarea className="input-block" />
+                        <textarea className="input-block" {...register("description")} />
                     </div>
 
                     <div className="form-group">
