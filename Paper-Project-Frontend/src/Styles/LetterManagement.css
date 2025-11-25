@@ -1,0 +1,55 @@
+.upload-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    margin: auto;
+
+}
+
+
+.paper-form {
+
+
+    background: #000000;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+
+    border: 3px solid #ffffff;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+
+    border: 2px solid #0a0a09;
+    background: rgb(248, 240, 240);
+    font-size: 1.1rem;
+}
+
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: "Patrick Hand", "Comic Sans", cursive;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+}
+
+.card-body {
+    background-color: #fdfbf7;
+    width: 500px;
+
+}

@@ -9,7 +9,7 @@ async function getFile() {
 
 async function sendFile(title, description) {
 
-    const response = await axios.post("http://localhost:8080/api/files", {
+    const response = await axios.post("http://localhost:8080/api/upload", {
         title: title,
         description: description
 

@@ -1,5 +1,5 @@
-import React from "react";
-import "./MainLayout.css";
+
+import "C:\\Users\\jepis\\Desktop\\School stuff\\I Hate Paper Project\\paper-project-frontend\\Paper-Project-Frontend\\src\\Styles\\MainLayout.css";
 import MenuBar from "./MenuBar"
 import UserInfo from "./UserInfo";
 
@@ -7,13 +7,16 @@ import UserInfo from "./UserInfo";
 const MainLayout = ({ children }) => {
   return (
     <div className="container">
-      <div className="user-info"><UserInfo></UserInfo></div>
 
-      <div className="extra-space">extra space here</div>
+      <div className="user-info">
+        <UserInfo />
+      </div>
 
-      <nav className="menu">
+
+      <nav className="top-menu">
         <MenuBar />
       </nav>
+
 
       <main className="letter-center">
         {children}
@@ -22,8 +25,10 @@ const MainLayout = ({ children }) => {
       <div className="footer">
         <footer />
       </div>
+
     </div>
   );
-}
+};
+
 
 export default MainLayout;
