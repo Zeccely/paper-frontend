@@ -22,7 +22,7 @@ const LetterManagement = () => {
     const { register, handleSubmit } = useForm();
 
     async function onSubmit(data) {
-        const file = data.document[0];
+        const file = data.file[0];
 
         const formData = new FormData();
         formData.append("title", data.title);
@@ -62,7 +62,7 @@ const LetterManagement = () => {
 
                     <div className="form-group">
                         <label>Document</label>
-                        <input className="input-block" type="file" />
+                        <input className="input-block" type="file" {...register("file")} />
                     </div>
 
                     <button className="btn-block background-secondary" type="submit">
