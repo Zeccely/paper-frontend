@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   margin: 0;
-  background: url("/src/assets/background.gif");
+  background: color white;
   background-size: cover;
   background-repeat: no-repeat;
   backdrop-filter: blur(15px);

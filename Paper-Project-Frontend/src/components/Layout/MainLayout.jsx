@@ -1,6 +1,5 @@
-
-import "C:\\Users\\jepis\\Desktop\\School stuff\\I Hate Paper Project\\paper-project-frontend\\Paper-Project-Frontend\\src\\Styles\\MainLayout.css";
-import MenuBar from "./MenuBar"
+import "../../Styles/MainLayout.css";
+import MenuBar from "./MenuBar";
 import UserInfo from "./UserInfo";
 
 

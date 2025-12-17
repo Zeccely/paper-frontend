@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { sendFile } from "../../api/FileGrabber";
-import "../../Paper-Project-Frontend\src\Styles\LetterManagement.css"
+import "../../Styles/LetterManagement.css";
+
 async function onSubmit(e) {
     e.preventDefault();
 
