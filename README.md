@@ -1,6 +1,6 @@
 # Paper Project Frontend
-
-
+docker build -t zeccely/i_hate_paper-frontend:latest . --no-cache
+docker push zeccely/i_hate_paper-frontend:latest
 
 ## Getting started
 
