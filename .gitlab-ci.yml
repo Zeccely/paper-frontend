@@ -5,7 +5,7 @@ stages:
 
 build:
   stage: build
-  before-script: 
+  before_script: 
     - cd "$CI_PROJECT_DIR/Paper-Project-Frontend"
   script:
     - npm install
@@ -16,8 +16,8 @@ build:
 
 
 publish:
-  stage: publish~
-  before-script:
+  stage: publish
+  before_script:
     - cd "$Env:CI_PROJECT_DIR\Paper-Project-Frontend"
   script:
     - docker build -t zeccely/i_hate_paper-frontend:latest . --no-cache
