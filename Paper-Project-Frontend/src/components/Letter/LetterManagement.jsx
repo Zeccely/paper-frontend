@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { sendFile } from "../../api/FileGrabber";
 import "../../Styles/LetterManagement.css";
 
 async function onSubmit(e) {
@@ -26,7 +25,7 @@ const LetterManagement = () => {
 
         const formData = new FormData();
         formData.append("title", data.title);
-        formData.append("description", data.description);
+        formData.append("category", data.category);
         formData.append("deadline", data.deadline);
         formData.append("description", data.description)
         formData.append("file", file);
