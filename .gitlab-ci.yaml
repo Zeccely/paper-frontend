@@ -1,0 +1,25 @@
+
+stages:
+  - build
+  - publish
+
+build:
+  stage: build
+  before-script: 
+    - cd "$CI_PROJECT_DIR/Paper-Project-Frontend"
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+
+publish:
+  stage: publish
+  script:
+    - docker build -t zeccely/i_hate_paper-frontend:latest . --no-cache
+    - docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PATTOKEN"
+    - docker push zeccely/i_hate_paper-frontend:latest
+  dependencies:
+    - build
