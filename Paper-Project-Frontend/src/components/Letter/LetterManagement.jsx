@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import "../../Styles/LetterManagement.css";
-import { sendFile } from "../../api/filegrabber";
+import { sendFile } from "../../api/FileGrabber";
 
 
 
