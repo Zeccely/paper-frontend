@@ -20,7 +20,7 @@ publish:
   before_script:
     - cd "$Env:CI_PROJECT_DIR\Paper-Project-Frontend"
   script:
-    - docker build -t zeccely/i_hate_paper-frontend:latest .
+    - docker build -t zeccely/i_hate_paper-frontend .
     - docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PATTOKEN"
     - docker push zeccely/i_hate_paper-frontend:latest
   dependencies:
