@@ -2,7 +2,7 @@
 const Home = () => {
     return (
         <div>
-            <h1>WHICH PC WILL GET UPDATED???</h1>
+            <h1>Hello this is watchtower beep boop</h1>
             <p>Elias is next to me making documents</p>
         </div>
     );
