@@ -1,0 +1,18 @@
+{
+  "name": "paper-project-frontend",
+  "version": "1.0.0",
+  "description": "docker build -t zeccely/i_hate_paper-frontend:latest . --no-cache\r docker push zeccely/i_hate_paper-frontend:latest",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://git.fhict.nl/I548425/paper-project-frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
+  }
+}
