@@ -1,31 +1,39 @@
 import axios from "axios";
 
-async function getFile() {
+const API_BASE = "http://localhost:8080";
 
-    const response = await axios.get("http://localhost:8080/api/documents/{uuid}")
+const getAllDocuments = async () => {
+  const response = await axios.get(`${API_BASE}/api/documents`);
+  return response.data;
+};
 
-    return response.data
-}
+const getCategories = async () => {
+  const response = await axios.get(`${API_BASE}/api/categories`);
+  return response.data;
+};
 
-async function sendFile(formData) {
-    const response = await axios.post(
-        "http://localhost:8080/api/files/upload",
-        formData,
-        {
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
-        }
-    );
+const getDocumentById = async (uuid) => {
+  const response = await axios.get(`${API_BASE}/api/documents/${uuid}`);
+  return response.data;
+};
 
-    return response.data;
-}
+const sendFile = async (formData) => {
+  const response = await axios.post(
+    `${API_BASE}/api/files/upload`,
+    formData,
+    {
+      headers: { "Content-Type": "multipart/form-data" },
+    }
+  );
 
-async function getCategory() {
-    const response = await axios.get("http://localhost:8080/api/categories")
-    return response.data;
-}
+  return response.data;
+};
 
+const getFile = async (fileUUID) => {
+  const response = await axios.get(`${API_BASE}/api/files/${fileUUID}`, {
+    responseType: "blob",
+  });
+  return response.data;
+};
 
-
-export { getFile, sendFile };
+export { getAllDocuments, getCategories, getDocumentById, sendFile, getFile };

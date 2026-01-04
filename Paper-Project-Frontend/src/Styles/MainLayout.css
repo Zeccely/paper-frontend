@@ -16,7 +16,7 @@ body {
 
   grid-template-areas:
     "user-info top-menu"
-    "letter-center letter-center"
+    "sidebar main"
     "footer footer";
 
   height: 100vh;
@@ -55,10 +55,17 @@ body {
   padding: 20px;
 }
 
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  overflow-y: auto;
+}
 
-.letter-center {
-  grid-area: letter-center;
+
+.main {
+  grid-area: main;
   padding: 60px 80px;
+  overflow: auto;
 }
 
 
