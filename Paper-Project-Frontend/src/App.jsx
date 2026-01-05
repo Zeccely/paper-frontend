@@ -8,13 +8,10 @@ import { useState, useEffect } from "react";
 import { getCategories } from "./api/DocumentFetcher";
 import Login from "./Pages/Login";
 
-
-
-
 function App() {
-    const [categories, setCategories] = useState([]);
-    const [selectedCategoryName, setSelectedCategoryName] = useState(null);
-      useEffect(() => {
+  const [categories, setCategories] = useState([]);
+  const [selectedCategoryName, setSelectedCategoryName] = useState(null);
+  useEffect(() => {
     const loadCategories = async () => {
       try {
         const data = await getCategories();
@@ -28,24 +25,31 @@ function App() {
 
     loadCategories();
   }, []);
-    return (
-        <MainLayout
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/*"
+        element={
+          <MainLayout
             categories={categories}
             selectedCategoryName={selectedCategoryName}
-            setSelectedCategoryName={setSelectedCategoryName} 
-        >
-            
+            setSelectedCategoryName={setSelectedCategoryName}
+          >
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/letter" element={<Letter />} />
-                <Route path="/upload" element={<LetterManagement />} />
-                <Route path="/documents" element={<Documents selectedCategoryName={selectedCategoryName} />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/letter" element={<Letter />} />
+              <Route path="/upload" element={<LetterManagement />} />
+              <Route
+                path="/documents"
+                element={<Documents selectedCategoryName={selectedCategoryName} />}
+              />
             </Routes>
-
-        </MainLayout>);
-
-
+          </MainLayout>
+        }
+      />
+    </Routes>
+  );
 }
 
 export default App;

@@ -1,4 +1,4 @@
-export async function login(credentials) {
+async function login(credentials) {
   const response = await fetch("http://localhost:8080/api/auth/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -12,3 +12,5 @@ export async function login(credentials) {
 
   return response;
 }
+
+export { login };
