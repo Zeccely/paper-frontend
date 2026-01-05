@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className="paper-page-center">
       <div className="login-page">
-        <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="card shadow shadow-large shadow-hover" onSubmit={handleSubmit(onSubmit)}>
           <h1 className="paper-title">Login</h1>
 
           <div className="paper-field">

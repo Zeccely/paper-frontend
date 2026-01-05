@@ -7,7 +7,6 @@ body {
   backdrop-filter: blur(15px);
 }
 
-
 .container {
   display: grid;
 
@@ -29,7 +28,6 @@ body {
   align-items: center;
 }
 
-
 .menu-link {
 
   text-decoration: none;
@@ -39,10 +37,6 @@ body {
   padding-bottom: 3px;
   border-bottom: 3px solid transparent;
   transition: 0.2s ease;
-}
-
-.menu-link:hover {
-  border-bottom-color: rgba(0, 0, 0, 0.3);
 }
 
 .menu-link.active {
@@ -58,14 +52,12 @@ body {
 .sidebar {
   grid-area: sidebar;
   padding: 20px;
-  overflow-y: auto;
 }
 
 
 .main {
   grid-area: main;
   padding: 60px 80px;
-  overflow: auto;
 }
 
 
