@@ -39,7 +39,7 @@ const LetterManagement = () => {
     return (
         <div className="upload-wrapper">
             <form className="card shadow shadow-large shadow-hover" onSubmit={handleSubmit(onSubmit)}>
-                <div className="potaat">Add A Document</div>
+                <div className="potaat">Add A Poatatoe</div>
                 <div className="card-body" >
 
                     <div className="form-group">
