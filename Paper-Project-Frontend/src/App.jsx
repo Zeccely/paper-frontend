@@ -5,7 +5,6 @@ import LetterManagement from "./components/Letter/LetterManagement";
 import { Routes, Route } from "react-router-dom";
 import Documents from "./Pages/Documents";
 import { useState, useEffect } from "react";
-import { getCategories } from "./api/DocumentFetcher";
 import Login from "./Pages/Login";
 
 function App() {
