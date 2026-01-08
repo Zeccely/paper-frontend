@@ -66,27 +66,3 @@ body {
   padding: 15px;
   text-align: center;
 }
-
-
-
-
-@keyframes sidebarBounce {
-  0% {
-    transform: translateY(80px);
-    opacity: 0;
-  }
-
-  40% {
-    transform: translateY(-10px);
-    opacity: 1;
-  }
-
-  70% {
-    transform: translateY(4px);
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
