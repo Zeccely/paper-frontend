@@ -8,7 +8,7 @@ export const api = axios.create({
 });
 
 export async function getMe() {
-    const res = await api.get("/api/auth/me"); // or /api/users/me
+    const res = await api.get("/api/users/me");
     return res.data;
 }
 

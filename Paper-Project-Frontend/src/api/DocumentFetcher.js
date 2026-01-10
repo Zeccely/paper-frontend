@@ -1,6 +1,4 @@
-import { api } from "./ApiClient";
-
-const API_BASE = "http://localhost:8080";
+import api from "./ApiClient";
 
 const getAllDocuments = async () => {
   const response = await api.get("/api/documents");

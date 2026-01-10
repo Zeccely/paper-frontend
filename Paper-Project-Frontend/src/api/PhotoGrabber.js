@@ -8,8 +8,5 @@ async function getDocumentPicture() {
     return response.data
 }
 
-async function updatePicture() {
-
-}
 
 export { getDocumentPicture }
