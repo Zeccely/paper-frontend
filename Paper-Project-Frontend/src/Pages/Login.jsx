@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { login } from "./../api/AuthApi";
+import login from "./../api/AuthApi";
 import "../Styles/Login.css"
 
 const Login = () => {

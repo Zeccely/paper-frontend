@@ -1,4 +1,4 @@
-import { api } from "./ApiClient"
+import api from "./ApiClient"
 
 
 async function getDocumentPicture() {

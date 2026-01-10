@@ -1,7 +1,7 @@
 import api from "./ApiClient";
 
 const getAllDocuments = async () => {
-  const response = await api.get("/api/documents");
+  const response = await api.get("/api/documents/");
   return response.data;
 };
 
@@ -11,7 +11,7 @@ const getDocumentById = async (uuid) => {
 };
 
 const sendFile = async (formData) => {
-  const response = await api.post("/api/files/upload",
+  const response = await api.post("/api/documents/upload",
     formData,
     {
       headers: { "Content-Type": "multipart/form-data" },
@@ -22,7 +22,7 @@ const sendFile = async (formData) => {
 };
 
 const getFile = async (fileUUID) => {
-  const response = await api.get("/api/files/${fileUUID}", {
+  const response = await api.get("/api/documents/${fileUUID}", {
     responseType: "blob",
   });
   return response.data;

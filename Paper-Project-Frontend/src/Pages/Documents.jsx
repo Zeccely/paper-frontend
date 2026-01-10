@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import LetterInformation from "../components/Letter/LetterInformation";
 import { getAllDocuments } from "../api/DocumentFetcher";
 
+
 const Documents = ({ selectedCategoryName }) => {
 
   const [documents, setDocuments] = useState([]);
