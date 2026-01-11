@@ -1,5 +1,13 @@
 import { test, expect } from '@playwright/test';
 
+
+test.beforeAll(async ({ request }) => {
+  const res = await request.post('http://localhost:8080/api/auth/login', {
+    data: { username: 'User', password: 'Pass' },
+  });
+  expect(res.ok()).toBeTruthy();
+});
+
 test('Sends a file named chips', async ({ page, request }) => {
     const response = await request.post(
         'http://localhost:8080/api/documents',
@@ -36,7 +44,7 @@ test('backend rejects document with wrong extension', async ({ page, request }) 
             }
         }
     );
-    expect(res.status()).toBeGreaterThanOrEqual(400);
-    expect(res.status()).toBeLessThan(500);
+    expect(response.status()).toBeGreaterThanOrEqual(400);
+    expect(response.status()).toBeLessThan(500);
 }
 );
