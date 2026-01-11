@@ -6,23 +6,17 @@ const getAllDocuments = async () => {
 };
 
 const getDocumentById = async (uuid) => {
-  const response = await api.get("/api/documents/${uuid}");
+  const response = await api.get(`/api/documents/${uuid}`);  // backticks were for a reason, I reverted this twice
   return response.data;
 };
 
 const sendFile = async (formData) => {
-  const response = await api.post("/api/documents/upload",
-    formData,
-    {
-      headers: { "Content-Type": "multipart/form-data" },
-    }
-  );
-
+  const response = await api.post("/api/documents/", formData);
   return response.data;
 };
 
 const getFile = async (fileUUID) => {
-  const response = await api.get("/api/documents/${fileUUID}", {
+  const response = await api.get(`/api/documents/${fileUUID}/file`, {
     responseType: "blob",
   });
   return response.data;
