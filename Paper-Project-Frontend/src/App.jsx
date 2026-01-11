@@ -2,10 +2,11 @@ import MainLayout from "./components/Layout/MainLayout"
 import Letter from "./components/Letter/Letter"
 import Home from "./Pages/Home";
 import LetterManagement from "./components/Letter/LetterManagement";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Documents from "./Pages/Documents";
 import { useState, useEffect } from "react";
 import Login from "./Pages/Login";
+import { getCategories } from "./api/CategoryFetcher";
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -26,7 +27,8 @@ function App() {
   }, []);
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+    <Route path="/" element={<Navigate to="/login" replace />} />
+    <Route path="/login" element={<Login />} />
       <Route
         path="/*"
         element={
