@@ -6,6 +6,8 @@ import { Routes, Route } from "react-router-dom";
 import Documents from "./Pages/Documents";
 import { useState, useEffect } from "react";
 import Login from "./Pages/Login";
+import { getCategories } from "./api/CategoryFetcher"
+
 
 function App() {
   const [categories, setCategories] = useState([]);

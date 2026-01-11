@@ -4,6 +4,7 @@ import UserInfo from "./UserInfo";
 import { useState, useEffect } from "react";
 import CategoryBar from "../Category/CategoryBar";
 import { useLocation } from "react-router-dom";
+import { getCategories } from "../../api/CategoryFetcher"
 
 const MainLayout = ({ children }) => {
   const { pathname } = useLocation();
@@ -12,17 +13,17 @@ const MainLayout = ({ children }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-  const loadCategories = async () => {
-    try {
-      const data = await getAllCategories();
-      setCategories(data);
-    } catch (err) {
-      console.error("Failed to load categories", err);
-    }
-  };
+    const loadCategories = async () => {
+      try {
+        const data = await getCategories();
+        setCategories(data);
+      } catch (err) {
+        console.error("Failed to load categories", err);
+      }
+    };
 
-  loadCategories();
-}, []);
+    loadCategories();
+  }, []);
 
   return (
     <div className="container">
@@ -38,16 +39,12 @@ const MainLayout = ({ children }) => {
 
       <div className="sidebar">
         {isDocuments && (
-        <CategoryBar
+          <CategoryBar
             categories={categories}
             selectedId={selectedCategoryId}
             onSelect={setSelectedCategoryId}
-        />
-        )} : (
-    <div className="no-categories">
-      No categories available
-    </div>
-  )
+          />
+        )}
       </div>
 
       <main className="main">
