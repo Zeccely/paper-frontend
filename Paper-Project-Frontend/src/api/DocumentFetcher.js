@@ -1,7 +1,7 @@
 import api from "./ApiClient";
 
 const getAllDocuments = async () => {
-  const response = await api.get("/api/documents/");
+  const response = await api.get("/api/documents");
   return response.data;
 };
 
