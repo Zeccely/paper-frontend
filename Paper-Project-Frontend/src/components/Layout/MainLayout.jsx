@@ -1,7 +1,7 @@
 import "../../Styles/MainLayout.css";
 import MenuBar from "./MenuBar";
 import UserInfo from "./UserInfo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CategoryBar from "../Category/CategoryBar";
 import { useLocation } from "react-router-dom";
 
@@ -9,12 +9,20 @@ const MainLayout = ({ children }) => {
   const { pathname } = useLocation();
   const isDocuments = pathname.startsWith("/documents");
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
+  const [categories, setCategories] = useState([]);
 
-  const categories = [
-  { id: "school", name: "School" },
-  { id: "bills", name: "Bills" },
-  { id: "work", name: "Work" },
-  ];
+  useEffect(() => {
+  const loadCategories = async () => {
+    try {
+      const data = await getAllCategories();
+      setCategories(data);
+    } catch (err) {
+      console.error("Failed to load categories", err);
+    }
+  };
+
+  loadCategories();
+}, []);
 
   return (
     <div className="container">
@@ -35,7 +43,11 @@ const MainLayout = ({ children }) => {
             selectedId={selectedCategoryId}
             onSelect={setSelectedCategoryId}
         />
-        )}
+        )} : (
+    <div className="no-categories">
+      No categories available
+    </div>
+  )
       </div>
 
       <main className="main">
