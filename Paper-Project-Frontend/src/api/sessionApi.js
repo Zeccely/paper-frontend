@@ -1,9 +1,9 @@
 import api from "./ApiClient.js";
 
-export async function login(usernameOrEmail, password) {
+export async function login({ username, password }) {
 
-  const res = await api.post("/api/sessions", {
-    username: usernameOrEmail,
+  const res = await api.post(`/api/sessions`, {
+    username,
     password,
   });
   return res.data;

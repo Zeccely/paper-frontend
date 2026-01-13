@@ -11,7 +11,7 @@ const getDocumentById = async (uuid) => {
 };
 
 const sendFile = async (formData) => {
-  const response = await api.post("/api/documents/", formData);
+  const response = await api.post("/api/documents", formData);
   return response.data;
 };
 

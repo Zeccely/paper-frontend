@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import {login} from "./../api/sessionApi";
+import { login } from "./../api/sessionApi";
 import { createUser } from "../api/UserApi";
 import "../Styles/Login.css"
 import Confetti from "react-confetti";
@@ -8,14 +8,14 @@ import Confetti from "react-confetti";
 const Login = () => {
   const [showConfetti, setShowConfetti] = useState(false);
   const [mode, setMode] = useState("login")
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, reset, formState } = useForm();
   const { isSubmitting } = formState;
 
-   async function onSubmit(data) {
+  async function onSubmit(data) {
     try {
       if (mode === "login") {
         await login({
-          email: data.email,
+          username: data.username,
           password: data.password,
         });
 
@@ -25,8 +25,8 @@ const Login = () => {
           email: data.email,
           password: data.password,
         });
-         setShowConfetti(true);
-         setTimeout(() => setShowConfetti(false), 3000);
+        setShowConfetti(true);
+        setTimeout(() => setShowConfetti(false), 3000);
         setMode("login");
         reset({ email: data.email, password: "" });
       }
@@ -35,7 +35,7 @@ const Login = () => {
     }
   }
 
-    return (
+  return (
     <div className="paper-page-center">
       <div className="login-page">
         <form className="card shadow shadow-large shadow-hover" onSubmit={handleSubmit(onSubmit)}>
