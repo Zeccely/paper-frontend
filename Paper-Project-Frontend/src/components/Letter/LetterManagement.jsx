@@ -39,7 +39,7 @@ const LetterManagement = () => {
     return (
         <div className="upload-wrapper">
             <form className="card shadow shadow-large shadow-hover" onSubmit={handleSubmit(onSubmit)}>
-                <div className="uploadForm">Add A Document</div>
+                <div data-testid="UploadForm" className="uploadForm">Add A Document</div>
                 <div className="card-body" >
 
                     <div className="form-group">
@@ -67,7 +67,7 @@ const LetterManagement = () => {
                         <input className="input-block" type="file" {...register("file")} />
                     </div>
 
-                    <button className="btn-block background-secondary" type="submit">
+                    <button name="submit" className="btn-block background-secondary" type="submit">
                         Submit
                     </button>
 

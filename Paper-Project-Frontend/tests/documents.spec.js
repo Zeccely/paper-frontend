@@ -8,9 +8,11 @@ test.describe("Upload Page", () => {
     test("Should show form", async ({ page }) => {
 
         await expect(
-            page.getByRole("form", {
-                name: "uploadForm",
-            })
+            page.getByTestId("UploadForm")
         ).toBeVisible();
+
+        await expect(
+            page.getByRole("button", { name: "submit" }).toBeVisible()
+        )
     })
 })
