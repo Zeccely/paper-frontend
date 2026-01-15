@@ -2,9 +2,9 @@ import "../../Styles/LetterManagement.css";
 import LetterPicture from "./LetterPicture";
 
 
-const LetterInformation = ({document, onOpen}) => {
-    return (
-     <div className="card" style={{ width: "20rem" }}>
+const LetterInformation = ({ document, onOpen }) => {
+  return (
+    <div className="card" style={{ width: "20rem" }}>
       <div className="card-body">
 
         <LetterPicture
