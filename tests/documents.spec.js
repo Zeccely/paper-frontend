@@ -12,7 +12,7 @@ test.describe("Upload Page", () => {
         ).toBeVisible();
 
         await expect(
-            page.getByRole("button", { name: "submit" }).toBeVisible()
-        )
+            page.getByRole("button", { name: "submit" })
+        ).toBeVisible();
     })
 })
