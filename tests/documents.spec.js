@@ -14,5 +14,17 @@ test.describe("Upload Page", () => {
         await expect(
             page.getByRole("button", { name: "submit" })
         ).toBeVisible();
+
+
     })
+
+    test("Should send document", async ({ page }) => {
+
+        await expect(
+
+        )
+
+    })
+
+
 })
